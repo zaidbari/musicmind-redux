@@ -43,7 +43,8 @@ i18n.use(initReactI18next).init({
 					playlistTracks: 'Playlist tracks',
 					newsfeed: 'News Feed',
 					internalPlaylist: 'Internal playlists',
-					assignedPlaylists: 'Assigned playlists'
+					assignedPlaylists: 'Assigned playlists',
+					artist: 'Artist'
 				},
 				inputs: {
 					username: 'Username',
@@ -98,7 +99,8 @@ i18n.use(initReactI18next).init({
 					playlistTracks: 'Spillelister numre',
 					newsfeed: 'Nyhedsstrøm',
 					internalPlaylist: 'Interne spillelister',
-					assignedPlaylists: 'Tildelte spillelister'
+					assignedPlaylists: 'Tildelte spillelister',
+					artist: 'Lavet af'
 				},
 				inputs: {
 					username: 'Brugernavn',

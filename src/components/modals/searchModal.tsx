@@ -9,12 +9,12 @@ import Input from '../form/input'
 import { modalStyles as styles } from './modalStyles'
 
 export type TSetSearchModal = Dispatch<SetStateAction<boolean>>
-interface InfoModalProps {
+interface SearchModalProps {
 	setModal: TSetSearchModal
 	modal: boolean
 }
 
-export const SearchModal = ({ setModal, modal }: InfoModalProps): ReactElement => {
+export const SearchModal = ({ setModal, modal }: SearchModalProps): ReactElement => {
 	const { width, height } = useWindowDimensions()
 	const { t } = useTranslation()
 	const _handleSearch = () => {

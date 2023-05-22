@@ -24,6 +24,25 @@ export const modalStyles = StyleSheet.create({
 		shadowRadius: 4,
 		elevation: 5
 	},
+	backgroundImage: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		height: 150,
+		width: 150,
+		borderRadius: 20,
+		marginBottom: 10,
+		overflow: 'hidden'
+	},
+	image: {
+		width: 110,
+		height: 110,
+		borderRadius: 110,
+		borderWidth: 2,
+		borderColor: colors.accent,
+		borderStyle: 'solid',
+		overflow: 'hidden'
+	},
+
 	button: {
 		width: 100,
 		paddingHorizontal: 20,

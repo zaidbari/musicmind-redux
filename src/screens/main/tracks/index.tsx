@@ -8,6 +8,7 @@ import { FlatList, StyleSheet, View } from 'react-native'
 import TrackRow from './components/trackRow'
 import PlaylistDetailCard from './components/playlistDetails'
 import { SPACER } from '@/constants/misc'
+import { useGetTherapistQuery } from '@/redux/slices/therapist/therapistApiSlice'
 
 type Props = NativeStackScreenProps<MainStackParamList, 'tracks'>
 
@@ -15,6 +16,7 @@ const TrackScreen = ({ route }: Props): ReactElement => {
 	const { playlist } = route.params
 
 	const { data, isLoading, refetch, isFetching } = useGetPlaylistTracksQuery(playlist.playlist)
+	const { data: therapist } = useGetTherapistQuery(playlist.music_therapist)
 
 	const [listRef, setRef] = useState<FlatList<ITrack> | null>(null)
 
@@ -25,8 +27,10 @@ const TrackScreen = ({ route }: Props): ReactElement => {
 		[]
 	)
 	const renderHeader = useCallback(
-		() => <PlaylistDetailCard playlistDetails={playlist} tracksLength={data?.length || 0} />,
-		[playlist, data]
+		() => (
+			<PlaylistDetailCard playlistDetails={playlist} therapist={therapist || null} tracksLength={data?.length || 0} />
+		),
+		[playlist, data, therapist]
 	)
 	if (isLoading || isFetching) return <Loader />
 	return (

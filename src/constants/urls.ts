@@ -37,6 +37,7 @@ export const ASSIGNED_URL = BASE_API_URL + '/music/assigned/'
 
 export const USERTYPE_URL = BASE_API_URL + '/api/user-type/'
 export const USERNAME_URL = BASE_API_URL + '/api/user-name/'
+export const GET_MUSIC_THERAPIST = BASE_API_URL + '/music/musictherapists/'
 
 export const CHANGEPASS_URL = BASE_API_URL + '/api/change_password/'
 export const CREATEUSER_URL = BASE_API_URL + '/api/user/create/'

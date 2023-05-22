@@ -8,7 +8,7 @@ import { selectSidebar, setIsSidebarOpen } from '@/redux/slices/layout/sidebarSl
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { Image } from 'expo-image'
-import { ReactElement } from 'react'
+import { memo, ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Pressable, PressableProps, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default Sidebar
+export default memo(Sidebar)
