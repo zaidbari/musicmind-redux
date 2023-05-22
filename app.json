@@ -1,30 +1,87 @@
 {
-  "expo": {
-    "name": "musicmind-redux",
-    "slug": "musicmind-redux",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
+	"expo": {
+		"name": "musicmind-redux",
+		"slug": "musicmind-redux",
+		"version": "2.0.0",
+		"scheme": "musicmind",
+		"orientation": "default",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "dark",
+		"privacy": "hidden",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#151a28"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"requireFullScreen": true,
+			"buildNumber": "2.0.0",
+			"bundleIdentifier": "dk.instorex.musicmind",
+			"config": {
+				"usesNonExemptEncryption": false
+			},
+			"entitlements": {
+				"com.apple.developer.networking.wifi-info": true
+			},
+			"infoPlist": {
+				"UIUserInterfaceStyle": "Dark",
+				"UIBackgroundModes": ["audio"],
+				"NSPhotoLibraryUsageDescription": "$(PRODUCT_NAME) accesses your gallery to let you upload photo for your playlist.",
+				"NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
+			}
+		},
+		"android": {
+			"package": "dk.instorex.musicmind_new",
+			"versionCode": 30,
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#151a28"
+			},
+			"permissions": [
+				"android.permission.CAMERA",
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE",
+				"android.permission.BLUETOOTH",
+				"android.permission.BLUETOOTH_ADMIN",
+				"android.permission.BLUETOOTH_CONNECT"
+			]
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"plugins": [
+			"expo-localization",
+			"sentry-expo",
+			[
+				"expo-screen-orientation",
+				{
+					"initialOrientation": "DEFAULT"
+				}
+			],
+			[
+				"expo-image-picker",
+				{
+					"photosPermission": "$(PRODUCT_NAME) accesses your gallery to let you upload photo for your playlist."
+				}
+			]
+		],
+		"extra": {
+			"eas": {
+				"projectId": "1f9b02b3-b035-4912-b9b2-c2007247eb85"
+			}
+		},
+		"hooks": {
+			"postPublish": [
+				{
+					"file": "sentry-expo/upload-sourcemaps",
+					"config": {
+						"organization": "instorex-aps",
+						"project": "music-mind"
+					}
+				}
+			]
+		}
+	}
 }
