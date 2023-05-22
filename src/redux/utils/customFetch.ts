@@ -28,6 +28,9 @@ const customFetch: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError>
 	await mutex.waitForUnlock()
 	let result = await baseQuery(args, api, extraOptions)
 
+	// Do not retry if error returns 404
+	if ((result.error as any).originalStatus === 404) retry.fail(result.error)
+
 	if (result.error?.status === 401 && (result.error?.data as any).code === 'token_not_valid') {
 		if (!mutex.isLocked()) {
 			const release = await mutex.acquire()

@@ -66,7 +66,7 @@ const PlaylistDetailCard = ({ playlistDetails, tracksLength, therapist }: TProps
 							<Ionicons name="ios-play" size={18} color={colors.primary} />
 							<Text style={styles.buttonText}>{t('buttons.play')}</Text>
 						</Pressable>
-						<IconButton icon={'ios-copy'} text={t('buttons.copy') as string} />
+						<IconButton icon={'ios-copy-outline'} text={t('buttons.copy') as string} />
 						<IconButton icon={'ios-shuffle'} />
 						<IconButton icon={'ios-repeat'} />
 					</View>
