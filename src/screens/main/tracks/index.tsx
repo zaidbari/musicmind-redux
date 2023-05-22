@@ -21,11 +21,7 @@ const TrackScreen = ({ route }: Props): ReactElement => {
 	const [listRef, setRef] = useState<FlatList<ITrack> | null>(null)
 
 	const renderSeparator = useCallback(() => <View style={styles.separator} />, [])
-	const renderTrackRow = useCallback(
-		({ item }: { item: ITrack }) => <TrackRow track={item} />,
-
-		[]
-	)
+	const renderTrackRow = useCallback(({ item }: { item: ITrack }) => <TrackRow track={item} />, [])
 	const renderHeader = useCallback(
 		() => (
 			<PlaylistDetailCard playlistDetails={playlist} therapist={therapist || null} tracksLength={data?.length || 0} />
