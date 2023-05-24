@@ -26,14 +26,13 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
 		marginBottom: 10,
-		paddingRight: SPACER,
-		paddingLeft: 0,
 		alignItems: 'center',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		marginRight: SPACER,
+		gap: 10
 	},
 	input: {
 		marginBottom: 0,
-		marginLeft: 10,
 		width: '100%',
 		flex: 1
 	}

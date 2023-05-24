@@ -51,6 +51,7 @@ export const BaseCard = ({ name, image, description, setModal, onPress }: BaseCa
 const styles = StyleSheet.create({
 	image: {
 		flex: 1,
+		overflow: 'hidden',
 		borderRadius: 10,
 		width: '100%'
 	},

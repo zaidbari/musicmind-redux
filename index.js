@@ -1,4 +1,4 @@
-import { DEFAULT_THEME } from '@/constants/colors'
+import { colors, DEFAULT_THEME } from '@/constants/colors'
 import { store } from '@/redux/store'
 import AppStack from '@/stacks'
 import i18n from '@/utils/localization'
@@ -11,7 +11,7 @@ import * as Font from 'expo-font'
 import * as ScreenOrientation from 'expo-screen-orientation'
 import * as SplashScreen from 'expo-splash-screen'
 import { useCallback, useEffect, useState } from 'react'
-import { Platform, UIManager } from 'react-native'
+import { Platform, StatusBar, UIManager } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { Provider } from 'react-redux'
 
@@ -66,6 +66,7 @@ const Root = () => {
 	if (!appIsReady) return null
 	return (
 		<Provider store={store}>
+			<StatusBar barStyle={'light-content'} backgroundColor={colors.primary} />
 			<NavigationContainer theme={DEFAULT_THEME}>
 				<SafeAreaProvider onLayout={onLayoutRootView}>
 					<AppStack />

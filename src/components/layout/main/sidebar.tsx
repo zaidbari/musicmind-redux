@@ -54,9 +54,9 @@ const Sidebar = (): ReactElement | null => {
 				<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
 					<Image
 						style={styles.image}
-						source={require('/assets/music_mind_logo.svg')}
+						source={require('../../../../assets/music_mind_logo.svg')}
 						placeholder={blurhash}
-						contentFit="fill"
+						contentFit="contain"
 						transition={0}
 					/>
 					{device === PHONE && <IconButton icon={'close-sharp'} onPress={() => dispatch(setIsSidebarOpen(false))} />}
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 	},
 	linkText: {
 		marginLeft: 10,
-		fontSize: 18
+		fontSize: 16
 	}
 })
 

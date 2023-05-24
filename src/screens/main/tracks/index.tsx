@@ -15,10 +15,10 @@ type Props = NativeStackScreenProps<MainStackParamList, 'tracks'>
 const TrackScreen = ({ route }: Props): ReactElement => {
 	const { playlist } = route.params
 
-	const { data, isLoading, refetch, isFetching } = useGetPlaylistTracksQuery(playlist.playlist)
+	const { data, isLoading, isFetching } = useGetPlaylistTracksQuery(playlist.playlist)
 	const { data: therapist } = useGetTherapistQuery(playlist.music_therapist)
 
-	const [listRef, setRef] = useState<FlatList<ITrack> | null>(null)
+	const [_, setRef] = useState<FlatList<ITrack> | null>(null)
 
 	const renderSeparator = useCallback(() => <View style={styles.separator} />, [])
 	const renderTrackRow = useCallback(({ item }: { item: ITrack }) => <TrackRow track={item} />, [])

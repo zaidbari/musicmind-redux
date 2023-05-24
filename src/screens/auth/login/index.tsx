@@ -1,12 +1,12 @@
-import { ReactElement, useEffect, useState } from 'react'
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native'
-import { Image } from 'expo-image'
-import { blurhash, colors } from '@/constants/colors'
 import Input from '@/components/form/input'
-import { useLoginMutation } from '@/redux/slices/auth/authApiSlice'
+import { blurhash, colors } from '@/constants/colors'
 import { useAppDispatch } from '@/redux/hooks'
+import { useLoginMutation } from '@/redux/slices/auth/authApiSlice'
 import { setTokens } from '@/redux/slices/auth/authSlice'
+import { Image } from 'expo-image'
+import { ReactElement, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text } from 'react-native'
 
 const LoginScreen = (): ReactElement => {
 	const [username, setUsername] = useState<string>('')
@@ -33,10 +33,10 @@ const LoginScreen = (): ReactElement => {
 		}
 	}
 	return (
-		<View style={styles.container}>
+		<KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
 			<Image
 				style={styles.image}
-				source={require('/assets/music_mind_logo.svg')}
+				source={require('../../../../assets/music_mind_logo.svg')}
 				placeholder={blurhash}
 				contentFit="contain"
 				transition={10}
@@ -48,7 +48,7 @@ const LoginScreen = (): ReactElement => {
 				<Text style={styles.buttonText}>{t('buttons.signin')}</Text>
 			</Pressable>
 			<Text style={styles.errorText}>{t(error)}</Text>
-		</View>
+		</KeyboardAvoidingView>
 	)
 }
 

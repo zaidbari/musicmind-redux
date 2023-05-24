@@ -81,6 +81,7 @@ const MainStack = (): ReactElement => {
 				screenOptions={{
 					headerRight: HeaderRight,
 					headerLeft: HeaderLeft,
+					headerBackVisible: false,
 					headerTitle: HeaderTitle,
 					contentStyle: { paddingLeft: SPACER }
 				}}

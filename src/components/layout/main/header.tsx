@@ -24,7 +24,7 @@ export const HeaderRight = (): ReactElement => {
 	const dispatch = useAppDispatch()
 
 	return (
-		<View style={{ flexDirection: 'row', gap: 10, paddingRight: SPACER }}>
+		<View style={{ flexDirection: 'row', gap: 10 }}>
 			<IconButton icon="language-outline" onPress={_handleLanguageChange} />
 			<IconButton icon="cog-outline" onPress={() => {}} />
 			<IconButton icon="search-outline" onPress={() => setModal(true)} />
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	headerLeftIcon: {
-		marginLeft: SPACER
+		marginRight: SPACER
 	},
 	headerRightIcon: {
 		marginRight: SPACER

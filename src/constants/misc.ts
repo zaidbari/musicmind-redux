@@ -31,4 +31,4 @@ export const DESKTOP = Device.DeviceType.DESKTOP
 export const TV = Device.DeviceType.TV
 
 export const SPACER = 15
-export const FALLBACK = '/assets/icon.png'
+export const FALLBACK = require('../../assets/icon.png')

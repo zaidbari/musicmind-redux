@@ -114,6 +114,7 @@ i18n.use(initReactI18next).init({
 			}
 		}
 	},
+	compatibilityJSON: 'v3',
 	fallbackLng: 'da',
 	interpolation: {
 		escapeValue: false

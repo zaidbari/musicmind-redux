@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
 		color: 'white'
 	},
 	artist: {
-		fonstSize: 16,
+		fontSize: 16,
 		fontStyle: 'italic',
 		textDecorationStyle: 'solid',
 		textDecorationColor: colors.accent,
