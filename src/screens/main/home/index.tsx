@@ -8,14 +8,13 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { MainContainerProps, useGetMainContainersQuery } from '@/redux/slices/containers/containersApiSlice'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { setItemCount, setLayoutWidth } from '@/redux/slices/layout/layoutSlice'
-import { MainStackParamList } from '@/stacks/main'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { ScreenProps } from '@/stacks/main'
 import { ReactElement, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StyleSheet, View } from 'react-native'
 import { FlatGrid } from 'react-native-super-grid'
 
-type Props = NativeStackScreenProps<MainStackParamList, 'home'>
+type Props = ScreenProps<'home'>
 
 const HomeScreen = ({ navigation }: Props): ReactElement => {
 	const [containers, setContainers] = useState<MainContainerProps[]>([] as MainContainerProps[])

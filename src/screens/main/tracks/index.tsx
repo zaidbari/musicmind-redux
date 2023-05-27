@@ -1,16 +1,15 @@
 import { Loader } from '@/components/loader'
 import { colors } from '@/constants/colors'
-import { ITrack, useGetPlaylistTracksQuery } from '@/redux/slices/tracks/tracksApiSlice'
-import { MainStackParamList } from '@/stacks/main'
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { ReactElement, useCallback, useState } from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
-import TrackRow from './components/trackRow'
-import PlaylistDetailCard from './components/playlistDetails'
 import { SPACER } from '@/constants/misc'
 import { useGetTherapistQuery } from '@/redux/slices/therapist/therapistApiSlice'
+import { ITrack, useGetPlaylistTracksQuery } from '@/redux/slices/tracks/tracksApiSlice'
+import { ScreenProps } from '@/stacks/main'
+import { ReactElement, useCallback, useState } from 'react'
+import { FlatList, StyleSheet, View } from 'react-native'
+import PlaylistDetailCard from './components/playlistDetails'
+import TrackRow from './components/trackRow'
 
-type Props = NativeStackScreenProps<MainStackParamList, 'tracks'>
+type Props = ScreenProps<'tracks'>
 
 const TrackScreen = ({ route }: Props): ReactElement => {
 	const { playlist } = route.params
@@ -28,6 +27,7 @@ const TrackScreen = ({ route }: Props): ReactElement => {
 		),
 		[playlist, data, therapist]
 	)
+
 	if (isLoading || isFetching) return <Loader />
 	return (
 		<View style={styles.container}>

@@ -12,7 +12,7 @@ import { PlaylistProps } from '@/redux/slices/playlists/playlistApiSlice'
 import HomeScreen from '@/screens/main/home'
 import PlaylistsScreen from '@/screens/main/playlists'
 import TrackScreen from '@/screens/main/tracks'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack'
 import { ReactElement, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -26,6 +26,8 @@ export type MainStackParamList = {
 		playlist: PlaylistProps
 	}
 }
+
+export type ScreenProps<T extends keyof MainStackParamList> = NativeStackScreenProps<MainStackParamList, T>
 
 const Stack = createNativeStackNavigator<MainStackParamList>()
 
