@@ -13,7 +13,9 @@
 			"resizeMode": "contain",
 			"backgroundColor": "#151a28"
 		},
-		"assetBundlePatterns": ["**/*"],
+		"assetBundlePatterns": [
+			"**/*"
+		],
 		"ios": {
 			"supportsTablet": true,
 			"requireFullScreen": true,
@@ -27,9 +29,11 @@
 			},
 			"infoPlist": {
 				"UIUserInterfaceStyle": "Dark",
-				"UIBackgroundModes": ["audio"],
+				"UIBackgroundModes": [
+					"audio"
+				],
 				"NSPhotoLibraryUsageDescription": "$(PRODUCT_NAME) accesses your gallery to let you upload photo for your playlist.",
-				"NSCameraUsageDescription": "Allow $(PRODUCT_NAME) to access your camera"
+				"NSCameraUsageDescription": "$(PRODUCT_NAME) accesses your camera to let you upload photo for your playlist."
 			}
 		},
 		"android": {
@@ -42,10 +46,7 @@
 			"permissions": [
 				"android.permission.CAMERA",
 				"android.permission.READ_EXTERNAL_STORAGE",
-				"android.permission.WRITE_EXTERNAL_STORAGE",
-				"android.permission.BLUETOOTH",
-				"android.permission.BLUETOOTH_ADMIN",
-				"android.permission.BLUETOOTH_CONNECT"
+				"android.permission.WRITE_EXTERNAL_STORAGE"
 			]
 		},
 		"web": {

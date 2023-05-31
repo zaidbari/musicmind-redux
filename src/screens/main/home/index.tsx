@@ -61,9 +61,11 @@ const HomeScreen = ({ navigation }: Props): ReactElement => {
 				onLayout={({ nativeEvent }) => dispatch(setLayoutWidth(nativeEvent.layout.width))}
 				onItemsPerRowChange={(count) => dispatch(setItemCount(count))}
 				additionalRowStyle={{ padding: 0 }}
+				style={{ padding: 0, margin: 0 }}
 				itemDimension={device === PHONE ? 150 : 200}
 				data={containers as MainContainerProps[]}
 				renderItem={renderItem}
+				showsVerticalScrollIndicator={false}
 			/>
 		</View>
 	)

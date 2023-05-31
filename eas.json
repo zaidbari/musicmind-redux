@@ -19,7 +19,6 @@
 		},
 		"production": {
 			"android": {
-				"build-type": "app-bundle",
 				"autoIncrement": true
 			},
 			"ios": {

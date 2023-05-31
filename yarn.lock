@@ -9961,6 +9961,11 @@ react-native-super-grid@^5.0.0:
   dependencies:
     prop-types "^15.6.0"
 
+react-native-track-player@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-3.2.0.tgz#c7b7a53eaf4c248af2ac876ef349feaee2ef774a"
+  integrity sha512-svv6TOgU/quFV1aajG5PskVhgFG0wHQtO+aYs6cIH0D27ckzN8WVoC3jI94m1CVaSgLMw48P911csYuD2fIcqA==
+
 react-native-web@~0.18.10:
   version "0.18.12"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.12.tgz#d4bb3a783ece2514ba0508d7805b09c0a98f5a8e"

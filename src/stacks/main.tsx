@@ -1,5 +1,5 @@
 import MainLayout from '@/components/layout/main'
-import { HeaderLeft, HeaderRight, HeaderTitle } from '@/components/layout/main/header'
+import { MainHeader } from '@/components/layout/main/header'
 import { SPACER } from '@/constants/misc'
 import { useAppDispatch } from '@/redux/hooks'
 import { useGetUserNameQuery, useGetUserTypeQuery } from '@/redux/slices/auth/authApiSlice'
@@ -81,11 +81,9 @@ const MainStack = (): ReactElement => {
 		<MainLayout>
 			<Stack.Navigator
 				screenOptions={{
-					headerRight: HeaderRight,
-					headerLeft: HeaderLeft,
-					headerBackVisible: false,
-					headerTitle: HeaderTitle,
-					contentStyle: { paddingLeft: SPACER }
+					header: MainHeader,
+					contentStyle: { paddingHorizontal: SPACER },
+					headerShadowVisible: false
 				}}
 			>
 				<Stack.Screen name="home" options={{ title: t('headings.home') as string }} component={HomeScreen} />

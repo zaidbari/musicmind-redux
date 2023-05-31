@@ -1,6 +1,5 @@
 import { IconButton } from '@/components/buttons/iconButton'
 import Input from '@/components/form/input'
-import { SPACER } from '@/constants/misc'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StyleSheet, View } from 'react-native'
@@ -26,9 +25,7 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
 		marginBottom: 10,
-		alignItems: 'center',
 		justifyContent: 'space-between',
-		marginRight: SPACER,
 		gap: 10
 	},
 	input: {

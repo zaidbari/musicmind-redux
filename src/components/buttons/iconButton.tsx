@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
 	iconButton: {
 		backgroundColor: colors.secondary,
 		padding: 8,
-		borderRadius: 5
+		borderRadius: 5,
+		alignItems: 'center'
 	},
 	textContainer: {
 		flexDirection: 'row',

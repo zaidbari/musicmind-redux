@@ -1,6 +1,9 @@
 import { colors, DEFAULT_THEME } from '@/constants/colors'
+import { SENTRY_DSN } from '@/constants/urls'
 import { store } from '@/redux/store'
+import { PlaybackService } from '@/services/playbackService'
 import AppStack from '@/stacks'
+import '@/utils/localization'
 import i18n from '@/utils/localization'
 import { logger } from '@/utils/logger'
 import Ionicons from '@expo/vector-icons/Ionicons'
@@ -12,14 +15,23 @@ import * as ScreenOrientation from 'expo-screen-orientation'
 import * as SplashScreen from 'expo-splash-screen'
 import { useCallback, useEffect, useState } from 'react'
 import { Platform, StatusBar, UIManager } from 'react-native'
+import 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+import TrackPlayer from 'react-native-track-player'
 import { Provider } from 'react-redux'
 
-import '@/utils/localization'
-import 'react-native-gesture-handler'
+import * as Sentry from 'sentry-expo'
 
 // Prevents the splash screen from hiding until all fonts and assets are loaded
 SplashScreen.preventAutoHideAsync()
+
+Sentry.init({
+	dsn: SENTRY_DSN,
+	enableInExpoDevelopment: false,
+	debug: false,
+	tracesSampleRate: 1.0,
+	attachScreenshot: true
+})
 
 // Enables layout animations on Android Devices
 if (Platform.OS === 'android') {
@@ -77,3 +89,5 @@ const Root = () => {
 }
 
 registerRootComponent(Root)
+
+TrackPlayer.registerPlaybackService(() => PlaybackService)

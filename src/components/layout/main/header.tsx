@@ -9,9 +9,11 @@ import { selectSidebar, setIsSidebarOpen } from '@/redux/slices/layout/sidebarSl
 import { useNavigation } from '@react-navigation/native'
 import { ReactElement, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import { getHeaderTitle } from '@react-navigation/elements'
+import { colors } from '@/constants/colors'
 
 type HTProps = {
-	children: string
+	title: string
 }
 
 type HLProps = {
@@ -52,12 +54,31 @@ export const HeaderLeft = ({ canGoBack }: HLProps): ReactElement => {
 	)
 }
 
-export const HeaderTitle = ({ children }: HTProps): ReactElement => {
+export const HeaderTitle = ({ title }: HTProps): ReactElement => {
 	const { device } = useAppSelector(selectDevice)
-	return device !== PHONE ? <Text style={styles.headerTitleText}>{children.toUpperCase()}</Text> : <View />
+	return device !== PHONE ? <Text style={styles.headerTitleText}>{title.toUpperCase()}</Text> : <View />
+}
+
+export const MainHeader = ({ navigation, route, options }: any): ReactElement => {
+	const title = getHeaderTitle(options, route.name)
+	return (
+		<View style={styles.headerContainer}>
+			<View style={styles.headerLeftContainer}>
+				<HeaderLeft canGoBack={navigation.canGoBack()} />
+				<HeaderTitle title={title} />
+			</View>
+			<HeaderRight />
+		</View>
+	)
 }
 
 const styles = StyleSheet.create({
+	headerContainer: {
+		backgroundColor: colors.primary,
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		padding: SPACER
+	},
 	headerLeftContainer: {
 		flexDirection: 'row',
 		alignItems: 'center'
