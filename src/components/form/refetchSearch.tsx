@@ -1,8 +1,10 @@
-import { IconButton } from '@/components/buttons/iconButton'
-import Input from '@/components/form/input'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { StyleSheet, View } from 'react-native'
+
+import { IconButton } from '@/components/buttons/iconButton'
+import Input from '@/components/form/input'
 
 type SearchProps = {
 	setSearch: Dispatch<SetStateAction<string>>

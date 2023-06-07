@@ -1,7 +1,10 @@
-import { SPACER } from '@/constants/misc'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { Modal, Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
+
+import { SPACER } from '@/constants/misc'
+
 import { modalStyles as styles } from './modalStyles'
 
 export type TInfoModal = {

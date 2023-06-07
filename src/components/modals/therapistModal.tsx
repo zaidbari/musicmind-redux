@@ -1,8 +1,6 @@
-import { blurhash } from '@/constants/colors'
-import { FALLBACK, SPACER } from '@/constants/misc'
-import { TherapistProps } from '@/redux/slices/therapist/therapistApiSlice'
-import { Image } from 'expo-image'
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react'
+
+import { Image } from 'expo-image'
 import { useTranslation } from 'react-i18next'
 import {
 	ImageBackground,
@@ -15,7 +13,12 @@ import {
 	View
 } from 'react-native'
 
+import { blurhash } from '@/constants/colors'
+import { FALLBACK, SPACER } from '@/constants/misc'
+
 import { modalStyles as styles } from './modalStyles'
+
+import { TherapistProps } from '@/redux/slices/therapist/therapistApiSlice'
 
 export type TSetTherapistModal = Dispatch<SetStateAction<boolean>>
 interface TherapistModalProps {

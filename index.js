@@ -1,26 +1,26 @@
-import { colors, DEFAULT_THEME } from '@/constants/colors'
-import { SENTRY_DSN } from '@/constants/urls'
-import { store } from '@/redux/store'
-import { PlaybackService } from '@/services/playbackService'
-import AppStack from '@/stacks'
-import '@/utils/localization'
-import i18n from '@/utils/localization'
-import { logger } from '@/utils/logger'
+import { useCallback, useEffect, useState } from 'react'
+
 import Ionicons from '@expo/vector-icons/Ionicons'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { NavigationContainer } from '@react-navigation/native'
 import { registerRootComponent } from 'expo'
 import * as Font from 'expo-font'
-import * as ScreenOrientation from 'expo-screen-orientation'
 import * as SplashScreen from 'expo-splash-screen'
-import { useCallback, useEffect, useState } from 'react'
 import { Platform, StatusBar, UIManager } from 'react-native'
 import 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import TrackPlayer from 'react-native-track-player'
 import { Provider } from 'react-redux'
-
 import * as Sentry from 'sentry-expo'
+
+import { colors, DEFAULT_THEME } from '@/constants/colors'
+import { SENTRY_DSN } from '@/constants/urls'
+
+import { store } from '@/redux/store'
+import { PlaybackService } from '@/services/playbackService'
+import AppStack from '@/stacks'
+import i18n from '@/utils/localization'
+import { logger } from '@/utils/logger'
 
 // Prevents the splash screen from hiding until all fonts and assets are loaded
 SplashScreen.preventAutoHideAsync()
@@ -51,7 +51,7 @@ const Root = () => {
 			if (language) i18n.changeLanguage(language)
 
 			// This line actually unloacks all the possible orientations depending on device
-			await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
+			//	await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT)
 		} catch (error) {
 			logger.sentry(error)
 		} finally {

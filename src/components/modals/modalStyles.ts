@@ -1,6 +1,7 @@
+import { StyleSheet } from 'react-native'
+
 import { colors } from '@/constants/colors'
 import { SPACER } from '@/constants/misc'
-import { StyleSheet } from 'react-native'
 
 export const modalStyles = StyleSheet.create({
 	centeredView: {

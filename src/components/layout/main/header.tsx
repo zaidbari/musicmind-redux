@@ -1,16 +1,19 @@
+import { ReactElement, useState } from 'react'
+
+import { getHeaderTitle } from '@react-navigation/elements'
+import { useNavigation } from '@react-navigation/native'
+import { StyleSheet, Text, View } from 'react-native'
+
+import { colors } from '@/constants/colors'
+import { PHONE, SPACER } from '@/constants/misc'
+
 import { IconButton } from '@/components/buttons/iconButton'
 import { SearchModal } from '@/components/modals/searchModal'
-import { PHONE, SPACER } from '@/constants/misc'
 import { useTranslationHandler } from '@/hooks/useTranslationHandler'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { logoutUser } from '@/redux/slices/auth/authSlice'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { selectSidebar, setIsSidebarOpen } from '@/redux/slices/layout/sidebarSlice'
-import { useNavigation } from '@react-navigation/native'
-import { ReactElement, useState } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { getHeaderTitle } from '@react-navigation/elements'
-import { colors } from '@/constants/colors'
 
 type HTProps = {
 	title: string

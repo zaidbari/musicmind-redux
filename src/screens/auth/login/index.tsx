@@ -1,12 +1,15 @@
-import Input from '@/components/form/input'
+import { ReactElement, useEffect, useState } from 'react'
+
+import { Image } from 'expo-image'
+import { useTranslation } from 'react-i18next'
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text } from 'react-native'
+
 import { blurhash, colors } from '@/constants/colors'
+
+import Input from '@/components/form/input'
 import { useAppDispatch } from '@/redux/hooks'
 import { useLoginMutation } from '@/redux/slices/auth/authApiSlice'
 import { setTokens } from '@/redux/slices/auth/authSlice'
-import { Image } from 'expo-image'
-import { ReactElement, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text } from 'react-native'
 
 const LoginScreen = (): ReactElement => {
 	const [username, setUsername] = useState<string>('')

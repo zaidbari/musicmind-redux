@@ -1,12 +1,14 @@
-import { colors } from '@/constants/colors'
-import { SPACER } from '@/constants/misc'
 import { Dispatch, ReactElement, SetStateAction } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import { Modal, StyleSheet, useWindowDimensions, View } from 'react-native'
-import { IconButton } from '../buttons/iconButton'
-import Input from '../form/input'
+
+import { colors } from '@/constants/colors'
+import { SPACER } from '@/constants/misc'
 
 import { modalStyles as styles } from './modalStyles'
+import { IconButton } from '../buttons/iconButton'
+import Input from '../form/input'
 
 export type TSetSearchModal = Dispatch<SetStateAction<boolean>>
 interface SearchModalProps {

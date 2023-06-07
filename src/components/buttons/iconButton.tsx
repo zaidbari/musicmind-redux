@@ -1,7 +1,9 @@
-import { colors } from '@/constants/colors'
-import Ionicons from '@expo/vector-icons/Ionicons'
 import { ReactElement } from 'react'
+
+import Ionicons from '@expo/vector-icons/Ionicons'
 import { Pressable, PressableProps, StyleSheet, Text, View, ViewStyle } from 'react-native'
+
+import { colors } from '@/constants/colors'
 
 type IconButtonProps = PressableProps & {
 	icon: keyof typeof Ionicons.glyphMap

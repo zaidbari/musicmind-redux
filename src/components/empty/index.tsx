@@ -1,5 +1,6 @@
-import Ionicons from '@expo/vector-icons/Ionicons'
 import { ReactElement } from 'react'
+
+import Ionicons from '@expo/vector-icons/Ionicons'
 import { Text, View } from 'react-native'
 
 export const EmptyComponent = (): ReactElement => {

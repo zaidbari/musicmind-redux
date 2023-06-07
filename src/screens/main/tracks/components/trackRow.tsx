@@ -1,12 +1,14 @@
+import { memo, ReactElement } from 'react'
+
+import Ionicons from '@expo/vector-icons/Ionicons'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
+
 import { colors } from '@/constants/colors'
 import { PHONE } from '@/constants/misc'
+
 import { useAppSelector } from '@/redux/hooks'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { ITrack } from '@/redux/slices/tracks/tracksApiSlice'
-
-import Ionicons from '@expo/vector-icons/Ionicons'
-import { memo, ReactElement } from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 const TrackRow = ({ track }: { track: ITrack }): ReactElement => {
 	const { device } = useAppSelector(selectDevice)

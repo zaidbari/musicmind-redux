@@ -1,4 +1,5 @@
 import { TIMER_ACQUISITION_URL } from '@/constants/urls'
+
 import { api } from '@/redux/utils/customFetch'
 
 type TResponse = {

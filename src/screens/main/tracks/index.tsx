@@ -1,13 +1,17 @@
-import { Loader } from '@/components/loader'
+import { ReactElement, useCallback, useState } from 'react'
+
+import { FlatList, StyleSheet, View } from 'react-native'
+
 import { colors } from '@/constants/colors'
 import { SPACER } from '@/constants/misc'
+
+import PlaylistDetailCard from './components/playlistDetails'
+import TrackRow from './components/trackRow'
+
+import { Loader } from '@/components/loader'
 import { useGetTherapistQuery } from '@/redux/slices/therapist/therapistApiSlice'
 import { ITrack, useGetPlaylistTracksQuery } from '@/redux/slices/tracks/tracksApiSlice'
 import { ScreenProps } from '@/stacks/main'
-import { ReactElement, useCallback, useState } from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
-import PlaylistDetailCard from './components/playlistDetails'
-import TrackRow from './components/trackRow'
 
 type Props = ScreenProps<'tracks'>
 

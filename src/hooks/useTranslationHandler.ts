@@ -1,6 +1,7 @@
-import { logger } from '@/utils/logger'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useTranslation } from 'react-i18next'
+
+import { logger } from '@/utils/logger'
 
 type TUseLanguageReturnType = {
 	_handleLanguageChange: () => Promise<void>

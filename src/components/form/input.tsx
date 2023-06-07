@@ -1,6 +1,8 @@
-import { colors } from '@/constants/colors'
 import { useState } from 'react'
+
 import { StyleSheet, TextInput, TextInputProps } from 'react-native'
+
+import { colors } from '@/constants/colors'
 
 const Input = (props: TextInputProps) => {
 	const [isFocused, setIsFocused] = useState<boolean>(false)

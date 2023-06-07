@@ -1,6 +1,8 @@
 import { LOGIN_URL, USERNAME_URL, USERTYPE_URL } from '@/constants/urls'
-import { api } from '@/redux/utils/customFetch'
+
 import { ICredentials, ITokens } from './types'
+
+import { api } from '@/redux/utils/customFetch'
 
 export const authApiSlice = api.injectEndpoints({
 	endpoints: (builder) => ({

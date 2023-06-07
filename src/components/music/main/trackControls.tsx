@@ -1,8 +1,10 @@
-import { colors } from '@/constants/colors'
+import { ReactElement } from 'react'
+
 import Ionicons from '@expo/vector-icons/Ionicons'
 import Slider from '@react-native-community/slider'
-import { ReactElement } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+
+import { colors } from '@/constants/colors'
 
 export const TrackControls = (): ReactElement => {
 	return (

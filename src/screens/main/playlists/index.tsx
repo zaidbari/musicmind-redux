@@ -1,18 +1,21 @@
+import { ReactElement, useCallback, useEffect, useState } from 'react'
+
+import { useTranslation } from 'react-i18next'
+import { StyleSheet, Text, View } from 'react-native'
+import { FlatGrid } from 'react-native-super-grid'
+
+import { PHONE, SPACER } from '@/constants/misc'
+
 import { BaseCard } from '@/components/cards/baseCard'
 import { EmptyComponent } from '@/components/empty'
 import { RefetchSearch } from '@/components/form/refetchSearch'
 import { Loader } from '@/components/loader'
 import { InfoModal, TInfoModal } from '@/components/modals/infoModal'
-import { PHONE, SPACER } from '@/constants/misc'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { setItemCount, setLayoutWidth } from '@/redux/slices/layout/layoutSlice'
 import { PlaylistProps, useGetPlaylistsQuery } from '@/redux/slices/playlists/playlistApiSlice'
 import { ScreenProps } from '@/stacks/main'
-import { ReactElement, useCallback, useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { StyleSheet, Text, View } from 'react-native'
-import { FlatGrid } from 'react-native-super-grid'
 
 type Props = ScreenProps<'playlist'>
 

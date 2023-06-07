@@ -1,4 +1,5 @@
 import { MAIN_CONTAINER_URL } from '@/constants/urls'
+
 import { api } from '@/redux/utils/customFetch'
 
 export interface MainContainerProps {

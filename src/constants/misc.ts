@@ -1,5 +1,6 @@
-import { colors } from './colors'
 import * as Device from 'expo-device'
+
+import { colors } from './colors'
 
 const fw: 'bold' | 'normal' | '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900' | undefined = 'bold'
 const inter: 'dark' | 'light' | undefined = 'dark'

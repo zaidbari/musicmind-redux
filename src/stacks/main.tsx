@@ -1,6 +1,12 @@
+import { ReactElement, useEffect } from 'react'
+
+import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack'
+import { useTranslation } from 'react-i18next'
+
+import { SPACER } from '@/constants/misc'
+
 import MainLayout from '@/components/layout/main'
 import { MainHeader } from '@/components/layout/main/header'
-import { SPACER } from '@/constants/misc'
 import { useAppDispatch } from '@/redux/hooks'
 import { useGetUserNameQuery, useGetUserTypeQuery } from '@/redux/slices/auth/authApiSlice'
 import { setUser } from '@/redux/slices/auth/authSlice'
@@ -13,9 +19,6 @@ import HomeScreen from '@/screens/main/home'
 import PlaylistsScreen from '@/screens/main/playlists'
 import TrackScreen from '@/screens/main/tracks'
 import { setupTrackPlayer } from '@/services/playbackService'
-import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack'
-import { ReactElement, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 
 export type MainStackParamList = {
 	home: undefined

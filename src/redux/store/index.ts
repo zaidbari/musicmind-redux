@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { rootReducer } from '@/redux/reducers/rootReducer'
+
 import { api } from '../utils/customFetch'
+
+import { rootReducer } from '@/redux/reducers/rootReducer'
 
 export const store = configureStore({
 	reducer: rootReducer,

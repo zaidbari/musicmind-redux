@@ -1,6 +1,7 @@
-import { RootState } from '@/redux/store'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import * as Device from 'expo-device'
+
+import { RootState } from '@/redux/store'
 
 const initialState = {
 	device: Device.DeviceType.TABLET

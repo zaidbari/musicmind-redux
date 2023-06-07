@@ -1,11 +1,13 @@
-import { Mutex } from 'async-mutex'
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { BaseQueryFn, FetchArgs, FetchBaseQueryError, retry } from '@reduxjs/toolkit/query'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { BaseQueryFn, FetchArgs, FetchBaseQueryError, retry } from '@reduxjs/toolkit/query'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { Mutex } from 'async-mutex'
+
+import { BASE_API_URL, REFRESH_URL } from '@/constants/urls'
+
+import { RootState } from '../store'
 
 import { logoutUser, setTokens } from '@/redux/slices/auth/authSlice'
-import { BASE_API_URL, REFRESH_URL } from '@/constants/urls'
-import { RootState } from '../store'
 
 // Create a new mutex
 const mutex = new Mutex()

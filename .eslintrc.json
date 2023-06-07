@@ -1,25 +1,67 @@
 {
-	"extends": ["@react-native-community", "plugin:react/jsx-runtime", "prettier"],
+	"extends": [
+		"@react-native-community",
+		"plugin:react/jsx-runtime",
+		"prettier",
+		"plugin:import/recommended",
+		"plugin:import/typescript"
+	],
 	"rules": {
+		"import/no-named-as-default-member": "off",
 		"prettier/prettier": [
+			"error"
+		],
+		"import/newline-after-import": [
 			"error",
 			{
-				"tabWidth": 2,
-				"useTabs": true,
-				"semi": false,
-				"singleQuote": true,
-				"trailingComma": "none",
-				"bracketSpacing": true,
-				"jsxBracketSameLine": false,
-				"arrowParens": "always",
-				"printWidth": 120,
-				"endOfLine": "lf"
+				"count": 1
+			}
+		],
+		"import/no-unresolved": "error",
+		"import/order": [
+			"error",
+			{
+				"groups": [
+					"builtin",
+					"external",
+					"index",
+					"object",
+					"unknown",
+					[
+						"parent",
+						"sibling"
+					],
+					"type"
+				],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": false
+				},
+				"pathGroups": [
+					{
+						"pattern": "@/constants/**",
+						"group": "unknown",
+						"position": "after"
+					},
+					{
+						"pattern": "react",
+						"group": "builtin",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": [
+					"react",
+					"@/constants/**"
+				]
 			}
 		]
 	},
 	"overrides": [
 		{
-			"files": ["**/*.{ts,tsx}"],
+			"files": [
+				"**/*.{ts,tsx,js}"
+			],
 			"rules": {
 				"@typescript-eslint/no-unused-vars": "off",
 				"react-native/no-inline-styles": "off",
@@ -27,5 +69,12 @@
 				"no-self-compare": "off"
 			}
 		}
-	]
+	],
+	"settings": {
+		"import/resolver": {
+			"typescript": {
+				"project": "./tsconfig.json"
+			}
+		}
+	}
 }

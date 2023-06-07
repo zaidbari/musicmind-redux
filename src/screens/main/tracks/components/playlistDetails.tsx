@@ -1,18 +1,19 @@
+import { ReactElement, memo, useState } from 'react'
+
+import Ionicons from '@expo/vector-icons/Ionicons'
+import { Image } from 'expo-image'
+import { useTranslation } from 'react-i18next'
+import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
+
+import { blurhash, colors } from '@/constants/colors'
+import { FALLBACK, PHONE } from '@/constants/misc'
+
 import { IconButton } from '@/components/buttons/iconButton'
 import { TherapistModal } from '@/components/modals/therapistModal'
-import { blurhash, colors } from '@/constants/colors'
-import { PHONE } from '@/constants/misc'
-import { FALLBACK } from '@/constants/misc'
 import { useAppSelector } from '@/redux/hooks'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { PlaylistProps } from '@/redux/slices/playlists/playlistApiSlice'
 import { TherapistProps } from '@/redux/slices/therapist/therapistApiSlice'
-
-import Ionicons from '@expo/vector-icons/Ionicons'
-import { Image } from 'expo-image'
-import { memo, ReactElement, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
 
 type TProps = {
 	playlistDetails: PlaylistProps

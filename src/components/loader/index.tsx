@@ -1,6 +1,8 @@
-import { colors } from '@/constants/colors'
 import { ReactElement } from 'react'
+
 import { ActivityIndicator, View } from 'react-native'
+
+import { colors } from '@/constants/colors'
 
 export const Loader = (): ReactElement => {
 	return (

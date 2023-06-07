@@ -1,16 +1,19 @@
-import { IconButton } from '@/components/buttons/iconButton'
-import { TrackControls } from '@/components/music/main/trackControls'
-import { blurhash, colors } from '@/constants/colors'
-import { PHONE, SPACER } from '@/constants/misc'
-import { useAppDispatch, useAppSelector } from '@/redux/hooks'
-import { selectDevice } from '@/redux/slices/layout/deviceSlice'
-import { selectSidebar, setIsSidebarOpen } from '@/redux/slices/layout/sidebarSlice'
+import { memo, ReactElement } from 'react'
+
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import { Image } from 'expo-image'
-import { memo, ReactElement } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Pressable, PressableProps, StyleSheet, Text, useWindowDimensions, View } from 'react-native'
+
+import { blurhash, colors } from '@/constants/colors'
+import { PHONE, SPACER } from '@/constants/misc'
+
+import { IconButton } from '@/components/buttons/iconButton'
+import { TrackControls } from '@/components/music/main/trackControls'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { selectDevice } from '@/redux/slices/layout/deviceSlice'
+import { selectSidebar, setIsSidebarOpen } from '@/redux/slices/layout/sidebarSlice'
 
 type SidebarLinkProps = PressableProps & {
 	icon: keyof typeof Ionicons.glyphMap

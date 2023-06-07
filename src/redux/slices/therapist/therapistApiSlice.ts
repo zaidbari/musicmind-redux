@@ -1,4 +1,5 @@
 import { GET_MUSIC_THERAPIST } from '@/constants/urls'
+
 import { api } from '@/redux/utils/customFetch'
 
 export interface TherapistProps {

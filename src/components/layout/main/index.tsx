@@ -1,7 +1,9 @@
 import { ReactElement, useEffect, useState } from 'react'
+
+import { addEventListener } from '@react-native-community/netinfo'
 import { Text, View } from 'react-native'
+
 import Sidebar from './sidebar'
-import NetInfo from '@react-native-community/netinfo'
 
 const NoInternet = (): ReactElement => {
 	return (
@@ -15,7 +17,7 @@ const MainLayout = ({ children }: { children: ReactElement }): ReactElement => {
 	const [isInternetReachable, setIsInternetReachable] = useState<boolean>(true)
 
 	useEffect(() => {
-		const unsubscribe = NetInfo.addEventListener((state) => {
+		const unsubscribe = addEventListener((state) => {
 			setIsInternetReachable(state.isInternetReachable === null ? true : state.isInternetReachable)
 		})
 

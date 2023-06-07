@@ -1,11 +1,13 @@
-import { TSetInfoModal } from '@/components/modals/infoModal'
-import { blurhash, colors } from '@/constants/colors'
-import { SPACER } from '@/constants/misc'
-import { useAppSelector } from '@/redux/hooks'
-import { selectLayout } from '@/redux/slices/layout/layoutSlice'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { Image } from 'expo-image'
 import { GestureResponderEvent, Pressable, StyleSheet, Text, View } from 'react-native'
+
+import { blurhash, colors } from '@/constants/colors'
+import { SPACER } from '@/constants/misc'
+
+import { TSetInfoModal } from '@/components/modals/infoModal'
+import { useAppSelector } from '@/redux/hooks'
+import { selectLayout } from '@/redux/slices/layout/layoutSlice'
 
 type BaseCardProps = {
 	name: string

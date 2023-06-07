@@ -1,7 +1,9 @@
-import { RootState } from '@/redux/store'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { IAuthState, ITokens, IUser } from './types'
+
+import { RootState } from '@/redux/store'
 
 const initialState: IAuthState = {
 	user: null,
