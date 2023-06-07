@@ -8,7 +8,6 @@ type TUseLanguageReturnType = {
 
 export const useTranslationHandler = (): TUseLanguageReturnType => {
 	const { i18n } = useTranslation()
-
 	const _handleLanguageChange = async () => {
 		try {
 			if (i18n.language === 'en') {

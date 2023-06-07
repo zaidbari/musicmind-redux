@@ -12,6 +12,7 @@ import { PlaylistProps } from '@/redux/slices/playlists/playlistApiSlice'
 import HomeScreen from '@/screens/main/home'
 import PlaylistsScreen from '@/screens/main/playlists'
 import TrackScreen from '@/screens/main/tracks'
+import { setupTrackPlayer } from '@/services/playbackService'
 import { createNativeStackNavigator, NativeStackScreenProps } from '@react-navigation/native-stack'
 import { ReactElement, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -76,6 +77,10 @@ const MainStack = (): ReactElement => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [username, userType])
+
+	useEffect(() => {
+		setupTrackPlayer()
+	}, [])
 
 	return (
 		<MainLayout>
