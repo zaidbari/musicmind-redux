@@ -7,13 +7,14 @@ const initialState = {
 	isShuffleEnabled: false
 }
 
+type PayloadProps = typeof initialState
+
 const aquisitionSlice = createSlice({
 	name: 'aquisition',
 	initialState,
 	reducers: {
-		setAquisition: (state, action: PayloadAction<{ isShuffleEnabled: boolean; isRepeatEnabled: boolean }>) => {
-			state.isShuffleEnabled = action.payload.isShuffleEnabled
-			state.isRepeatEnabled = action.payload.isRepeatEnabled
+		setAquisition: (state, action: PayloadAction<PayloadProps>) => {
+			state = action.payload
 		}
 	}
 })
