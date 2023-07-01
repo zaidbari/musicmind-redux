@@ -39,7 +39,14 @@ export const SearchModal = ({ setModal, modal }: SearchModalProps): ReactElement
 						{ width: width - SPACER, maxHeight: height - 40 }
 					])}
 				>
-					<Input autoFocus placeholder={t('inputs.search') as string} style={customStyles.input} />
+					<Input
+						autoFocus
+						returnKeyType="search"
+						clearButtonMode="always"
+						enablesReturnKeyAutomatically={true}
+						placeholder={t('inputs.search') as string}
+						style={customStyles.input}
+					/>
 
 					<IconButton
 						onPress={_handleSearch}
@@ -77,13 +84,17 @@ const customStyles = StyleSheet.create({
 	},
 	container: {
 		flexDirection: 'row',
-		alignItems: 'center',
+		alignItems: 'stretch',
 		justifyContent: 'space-evenly',
+
 		gap: 5
 	},
 	input: {
+		flex: 1,
 		flexGrow: 2,
 		backgroundColor: colors.primary,
-		marginBottom: 0
+		marginBottom: 0,
+		padding: 5,
+		height: 45
 	}
 })

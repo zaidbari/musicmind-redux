@@ -45,6 +45,11 @@ const Sidebar = (): ReactElement | null => {
 	const { t } = useTranslation()
 	const { width, height } = useWindowDimensions()
 
+	const _handleLinkPress = (screen: string) => {
+		if (device === PHONE) dispatch(setIsSidebarOpen(false))
+		navigate(screen as never)
+	}
+
 	if (!isSidebarOpen) return null
 	return (
 		<View
@@ -65,7 +70,7 @@ const Sidebar = (): ReactElement | null => {
 					{device === PHONE && <IconButton icon={'close-sharp'} onPress={() => dispatch(setIsSidebarOpen(false))} />}
 				</View>
 				<SidebarLink
-					onPress={() => navigate('home' as never)}
+					onPress={() => _handleLinkPress('home')}
 					icon="ios-home-outline"
 					text={t('headings.home') as string}
 				/>

@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
 	input: {
 		marginBottom: 0,
 		width: '100%',
+		paddingVertical: 3,
 		flex: 1
 	}
 })

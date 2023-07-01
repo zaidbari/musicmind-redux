@@ -1,6 +1,5 @@
 import { ReactElement, memo, useState } from 'react'
 
-import Ionicons from '@expo/vector-icons/Ionicons'
 import { Image } from 'expo-image'
 import { useTranslation } from 'react-i18next'
 import { ImageBackground, Pressable, StyleSheet, Text, View } from 'react-native'
@@ -28,52 +27,49 @@ const PlaylistDetailCard = ({ playlistDetails, tracksLength, therapist }: TProps
 	const [modal, setModal] = useState<boolean>(false)
 
 	return (
-		<View style={StyleSheet.flatten([styles.container, device === PHONE && { flexDirection: 'column' }])}>
-			<ImageBackground
-				source={{ uri: photo }}
-				onError={() => setPhoto(FALLBACK)}
-				style={styles.backgroundImage}
-				resizeMode="cover"
-				blurRadius={10}
-			>
-				<Image
-					style={styles.image}
-					contentFit="fill"
-					source={{ uri: photo }}
-					transition={10}
-					onError={() => setPhoto(FALLBACK)}
-					placeholder={blurhash}
-				/>
-			</ImageBackground>
-			<View style={{ flexGrow: 1, flex: 1, gap: 3 }}>
-				<Text style={StyleSheet.flatten([styles.title, device === PHONE && { textAlign: 'center' }])}>
-					{playlistDetails.playlist_name}
-				</Text>
-				<Text style={StyleSheet.flatten([styles.subTitle, device === PHONE && { textAlign: 'center' }])}>
-					{tracksLength} {t('tracks')}
-				</Text>
-				<Pressable
-					onPress={() => {
-						setModal(therapist !== null)
-					}}
-				>
-					<Text style={StyleSheet.flatten([styles.artist, device === PHONE && { textAlign: 'center' }])}>
-						{t('headings.artist')}: {playlistDetails.music_therapist_name}
-					</Text>
-				</Pressable>
-				<View style={StyleSheet.flatten([styles.buttonRow, device === PHONE && { flexDirection: 'column' }])}>
-					<View style={styles.buttonRow}>
-						<Pressable style={styles.button} onPress={() => {}}>
-							<Ionicons name="ios-play" size={18} color={colors.primary} />
-							<Text style={styles.buttonText}>{t('buttons.play')}</Text>
+		<View>
+			<View style={StyleSheet.flatten([styles.container, device === PHONE && { flexDirection: 'column' }])}>
+				<View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
+					<ImageBackground
+						source={{ uri: photo }}
+						onError={() => setPhoto(FALLBACK)}
+						style={styles.backgroundImage}
+						resizeMode="cover"
+						blurRadius={10}
+					>
+						<Image
+							style={styles.image}
+							contentFit="fill"
+							source={{ uri: photo }}
+							transition={10}
+							onError={() => setPhoto(FALLBACK)}
+							placeholder={blurhash}
+						/>
+					</ImageBackground>
+					<View style={{ flexGrow: 1, flex: 1, gap: 3 }}>
+						<Text style={styles.title}>{playlistDetails.playlist_name}</Text>
+						<Text style={styles.subTitle}>
+							{tracksLength} {t('tracks')}
+						</Text>
+						<Text style={{ color: 'white' }}>{t('headings.artist')}:</Text>
+						<Pressable
+							onPress={() => {
+								setModal(therapist !== null)
+							}}
+						>
+							<Text style={styles.artist}>{playlistDetails.music_therapist_name}</Text>
 						</Pressable>
-						<IconButton icon={'ios-copy-outline'} text={t('buttons.copy') as string} />
-						<IconButton icon={'ios-shuffle'} />
-						<IconButton icon={'ios-repeat'} />
 					</View>
 				</View>
+				{therapist && <TherapistModal modal={modal} setModal={setModal} therapist={therapist} />}
 			</View>
-			{therapist && <TherapistModal modal={modal} setModal={setModal} therapist={therapist} />}
+			<View style={styles.buttonRow}>
+				<IconButton icon="ios-play" text={t('buttons.play') as string} />
+				<IconButton icon="ios-copy-outline" text={t('buttons.copy') as string} />
+				<IconButton icon="ios-shuffle" />
+				<IconButton icon="ios-repeat" />
+				<IconButton icon="ios-pencil" />
+			</View>
 		</View>
 	)
 }
@@ -86,17 +82,16 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		flexDirection: 'row',
 		gap: 10,
-		padding: 20,
+		padding: 15,
 		backgroundColor: colors.secondary,
-		borderRadius: 20,
-		marginBottom: 30
+		borderRadius: 5
 	},
 	backgroundImage: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		height: 150,
 		width: 150,
-		borderRadius: 20,
+		borderRadius: 10,
 		overflow: 'hidden'
 	},
 	image: {
@@ -134,8 +129,8 @@ const styles = StyleSheet.create({
 	buttonRow: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		gap: 3,
-		marginTop: 10
+		gap: 10,
+		marginVertical: 10
 	},
 	button: {
 		flexDirection: 'row',

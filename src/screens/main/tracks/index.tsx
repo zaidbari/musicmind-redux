@@ -45,14 +45,14 @@ const TrackScreen = ({ route }: Props): ReactElement => {
 				keyExtractor={(item) => String(item.id)}
 				renderItem={renderTrackRow}
 				ItemSeparatorComponent={renderSeparator}
+				showsVerticalScrollIndicator={false}
 			/>
 		</View>
 	)
 }
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		marginRight: SPACER
+		flex: 1
 	},
 	separator: {
 		height: 1,

@@ -8,9 +8,7 @@
 	],
 	"rules": {
 		"import/no-named-as-default-member": "off",
-		"prettier/prettier": [
-			"error"
-		],
+		"prettier/prettier": ["error"],
 		"import/newline-after-import": [
 			"error",
 			{
@@ -21,18 +19,7 @@
 		"import/order": [
 			"error",
 			{
-				"groups": [
-					"builtin",
-					"external",
-					"index",
-					"object",
-					"unknown",
-					[
-						"parent",
-						"sibling"
-					],
-					"type"
-				],
+				"groups": ["builtin", "external", "index", "object", "unknown", ["parent", "sibling"], "type"],
 				"newlines-between": "always",
 				"alphabetize": {
 					"order": "asc",
@@ -50,18 +37,13 @@
 						"position": "before"
 					}
 				],
-				"pathGroupsExcludedImportTypes": [
-					"react",
-					"@/constants/**"
-				]
+				"pathGroupsExcludedImportTypes": ["react", "@/constants/**"]
 			}
 		]
 	},
 	"overrides": [
 		{
-			"files": [
-				"**/*.{ts,tsx,js}"
-			],
+			"files": ["**/*.{ts,tsx,js,jsx}"],
 			"rules": {
 				"@typescript-eslint/no-unused-vars": "off",
 				"react-native/no-inline-styles": "off",
