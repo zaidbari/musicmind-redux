@@ -20,7 +20,7 @@ import { ScreenProps } from '@/stacks/main'
 type Props = ScreenProps<'home'>
 
 const HomeScreen = ({ navigation }: Props): ReactElement => {
-	const [containers, setContainers] = useState<MainContainerProps[]>([] as MainContainerProps[])
+	const [containers, setContainers] = useState<MainContainerProps[]>([]!)
 	const [search, setSearch] = useState<string>('')
 	const [modal, setModal] = useState<TInfoModal>({
 		visible: false,
@@ -66,7 +66,7 @@ const HomeScreen = ({ navigation }: Props): ReactElement => {
 				additionalRowStyle={{ padding: 0 }}
 				style={{ padding: 0, margin: 0 }}
 				itemDimension={device === PHONE ? 150 : 200}
-				data={containers as MainContainerProps[]}
+				data={containers}
 				renderItem={renderItem}
 				showsVerticalScrollIndicator={false}
 			/>

@@ -95,12 +95,12 @@ const MainStack = (): ReactElement => {
 				}}
 			>
 				<Stack.Screen name="home" options={{ title: t('headings.home') as string }} component={HomeScreen} />
+				<Stack.Screen name="tracks" options={{ title: t('headings.tracks') as string }} component={TrackScreen} />
 				<Stack.Screen
 					name="playlist"
 					options={{ title: t('headings.playlist') as string }}
 					component={PlaylistsScreen}
 				/>
-				<Stack.Screen name="tracks" options={{ title: t('headings.tracks') as string }} component={TrackScreen} />
 			</Stack.Navigator>
 		</MainLayout>
 	)

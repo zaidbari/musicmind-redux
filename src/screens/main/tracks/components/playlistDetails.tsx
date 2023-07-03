@@ -18,8 +18,9 @@ type TProps = {
 	playlistDetails: PlaylistProps
 	tracksLength: number
 	therapist: TherapistProps | null
+	handleTrackPlayer: (index: Number) => void
 }
-const PlaylistDetailCard = ({ playlistDetails, tracksLength, therapist }: TProps): ReactElement => {
+const PlaylistDetailCard = ({ playlistDetails, tracksLength, therapist, handleTrackPlayer }: TProps): ReactElement => {
 	const { t } = useTranslation()
 	const { device } = useAppSelector(selectDevice)
 
@@ -64,7 +65,7 @@ const PlaylistDetailCard = ({ playlistDetails, tracksLength, therapist }: TProps
 				{therapist && <TherapistModal modal={modal} setModal={setModal} therapist={therapist} />}
 			</View>
 			<View style={styles.buttonRow}>
-				<IconButton icon="ios-play" text={t('buttons.play') as string} />
+				<IconButton icon="ios-play" onPress={() => handleTrackPlayer(0)} text={t('buttons.play') as string} />
 				<IconButton icon="ios-copy-outline" text={t('buttons.copy') as string} />
 				<IconButton icon="ios-shuffle" />
 				<IconButton icon="ios-repeat" />

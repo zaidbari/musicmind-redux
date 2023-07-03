@@ -22,7 +22,7 @@ type Props = ScreenProps<'playlist'>
 const PlaylistsScreen = ({ route, navigation }: Props): ReactElement => {
 	const { playlist, description } = route.params
 
-	const [playlists, setPlaylists] = useState<PlaylistProps[]>([] as PlaylistProps[])
+	const [playlists, setPlaylists] = useState<PlaylistProps[]>([]!)
 	const [search, setSearch] = useState<string>('')
 	const [modal, setModal] = useState<TInfoModal>({
 		visible: false,
@@ -85,7 +85,7 @@ const PlaylistsScreen = ({ route, navigation }: Props): ReactElement => {
 				onItemsPerRowChange={(count) => dispatch(setItemCount(count))}
 				additionalRowStyle={{ padding: 0 }}
 				itemDimension={device === PHONE ? 150 : 200}
-				data={playlists as PlaylistProps[]}
+				data={playlists}
 				renderItem={renderItem}
 			/>
 		</View>

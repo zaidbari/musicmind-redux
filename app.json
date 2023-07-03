@@ -4,7 +4,6 @@
 		"slug": "musicmind-redux",
 		"version": "2.0.0",
 		"scheme": "musicmind",
-		"orientation": "default",
 		"icon": "./assets/icon.png",
 		"userInterfaceStyle": "dark",
 		"privacy": "hidden",
@@ -58,7 +57,7 @@
 			[
 				"expo-screen-orientation",
 				{
-					"initialOrientation": "DEFAULT"
+					"initialOrientation": "ALL"
 				}
 			],
 			[

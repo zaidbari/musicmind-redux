@@ -20,9 +20,9 @@ type SidebarLinkProps = PressableProps & {
 	text: string
 }
 
-const SidebarLink = ({ icon, style, text, ...props }: SidebarLinkProps): ReactElement => {
+const SidebarLink = ({ icon, text, ...props }: SidebarLinkProps): ReactElement => {
 	return (
-		<Pressable style={StyleSheet.flatten([styles.iconButton])} {...props}>
+		<Pressable style={styles.iconButton} {...props}>
 			{({ pressed }) => (
 				<View style={styles.textContainer}>
 					<Ionicons name={icon} size={25} color={pressed ? colors.accent : 'white'} />
@@ -69,14 +69,10 @@ const Sidebar = (): ReactElement | null => {
 					/>
 					{device === PHONE && <IconButton icon={'close-sharp'} onPress={() => dispatch(setIsSidebarOpen(false))} />}
 				</View>
-				<SidebarLink
-					onPress={() => _handleLinkPress('home')}
-					icon="ios-home-outline"
-					text={t('headings.home') as string}
-				/>
-				<SidebarLink icon="ios-folder-open-outline" text={t('headings.internalContainers') as string} />
-				<SidebarLink icon="ios-albums-outline" text={t('headings.myPlaylists') as string} />
-				<SidebarLink icon="ios-add-circle-outline" text={t('headings.createPlaylist') as string} />
+				<SidebarLink onPress={() => _handleLinkPress('home')} icon="ios-home-outline" text={t('headings.home')} />
+				<SidebarLink icon="ios-folder-open-outline" text={t('headings.internalContainers')} />
+				<SidebarLink icon="ios-albums-outline" text={t('headings.myPlaylists')} />
+				<SidebarLink icon="ios-add-circle-outline" text={t('headings.createPlaylist')} />
 				<SidebarLink icon="ios-radio-outline" text={'Play Radio'} />
 			</View>
 			{device !== PHONE && <TrackControls />}

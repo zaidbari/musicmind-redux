@@ -1,5 +1,4 @@
-import { Platform } from 'react-native'
-import { Browser, Native } from 'sentry-expo'
+import { Native } from 'sentry-expo'
 
 export const logger = {
 	log: (message: any, ...rest: any) => {
@@ -13,7 +12,6 @@ export const logger = {
 			console.log(error, ...rest)
 			return
 		}
-		if (Platform.OS === 'web') Browser.captureException(error, ...rest)
-		else Native.captureException(error, ...rest)
+		Native.captureException(error, ...rest)
 	}
 }

@@ -10,12 +10,18 @@ import { useAppSelector } from '@/redux/hooks'
 import { selectDevice } from '@/redux/slices/layout/deviceSlice'
 import { ITrack } from '@/redux/slices/tracks/tracksApiSlice'
 
-const TrackRow = ({ track }: { track: ITrack }): ReactElement => {
+type Props = {
+	track: ITrack
+	index: Number
+	handleTrackPlayer: (index: Number) => void
+}
+
+const TrackRow = ({ track, index, handleTrackPlayer }: Props): ReactElement => {
 	const { device } = useAppSelector(selectDevice)
 
 	return (
 		<View style={styles.container}>
-			<Pressable onPress={() => {}}>
+			<Pressable onPress={() => handleTrackPlayer(index)}>
 				<Ionicons name={'play-circle'} color={colors.secondary} size={40} />
 			</Pressable>
 			<View style={{ flex: 1 }}>
